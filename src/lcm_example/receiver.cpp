@@ -30,7 +30,7 @@ public:
   }
 };
 
-int init()
+int main(int argc, char* argv[])
 {
   // Initialize LCM
   lcm::LCM lcm;

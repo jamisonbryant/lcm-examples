@@ -1,7 +1,7 @@
 #include <lcm/lcm-cpp.hpp>
 #include "example/example_t.hpp"
 
-int init()
+int main(int argc, char* argv[])
 {
   // Initialize LCM
   lcm::LCM lcm;
