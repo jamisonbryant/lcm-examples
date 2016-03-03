@@ -1,4 +1,4 @@
-package exlcm;
+package example;
 
 struct example_t
 {

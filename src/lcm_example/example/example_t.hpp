@@ -6,13 +6,13 @@
 
 #include <lcm/lcm_coretypes.h>
 
-#ifndef __exlcm_example_t_hpp__
-#define __exlcm_example_t_hpp__
+#ifndef __example_example_t_hpp__
+#define __example_example_t_hpp__
 
 #include <vector>
 #include <string>
 
-namespace exlcm
+namespace example
 {
 
 class example_t

@@ -1,7 +1,7 @@
 #include <lcm/lcm-cpp.hpp>
-#include "exlcm/example_t.hpp"
+#include "example/example_t.hpp"
 
-int main(int argc, char** argv)
+int init()
 {
   // Initialize LCM
   lcm::LCM lcm;
@@ -10,7 +10,7 @@ int main(int argc, char** argv)
     return 1;
 
   // Construct example message
-  exlcm::example_t example_msg;
+  example::example_t example_msg;
 
   example_msg.timestamp = time(NULL);
   example_msg.position[0] = 1;
@@ -21,10 +21,10 @@ int main(int argc, char** argv)
   example_msg.orientation[2] = 0;
   example_msg.orientation[3] = 0;
   example_msg.num_ranges = 15;
-  example_msg.ranges.resize(example_msg.num_ranges);
+  example_msg.ranges.resize((unsigned long) example_msg.num_ranges);
 
   for (int i = 0; i < example_msg.num_ranges; i++) {
-    example_msg.ranges[i] = i;
+    example_msg.ranges[i] = (short) i;
   }
 
   example_msg.name = "Sample message";

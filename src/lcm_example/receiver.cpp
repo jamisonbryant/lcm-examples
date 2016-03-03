@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <lcm/lcm-cpp.hpp>
-#include "exlcm/example_t.hpp"
+#include "example/example_t.hpp"
 
 class Handler
 {
@@ -9,10 +9,8 @@ public:
 
   void handle_msg(const lcm::ReceiveBuffer* rbuf,
                   const std::string& channel_name,
-                  const exlcm::example_t* msg)
+                  const example::example_t* msg)
   {
-    int i;
-
     // Print message contents
     printf("Received message on channel \"%s\":\n", channel_name.c_str());
     printf("  timestamp   = %lld\n", (long long) msg->timestamp);
@@ -21,7 +19,7 @@ public:
     printf("  orientation = (%f, %f, %f, %f)\n",
            msg->orientation[0], msg->orientation[1],
            msg->orientation[2], msg->orientation[3]);
-    prinf("  ranges:");
+    printf("  ranges:");
 
     for (int i = 0; i < msg->num_ranges; i++)
       printf(" %d", msg->ranges[i]);
@@ -30,9 +28,9 @@ public:
     printf("  name        = %s\n", msg->name.c_str());
     printf("  enabled     = %d\n", msg->enabled);
   }
-}
+};
 
-int main(int argc, char** argv)
+int init()
 {
   // Initialize LCM
   lcm::LCM lcm;
