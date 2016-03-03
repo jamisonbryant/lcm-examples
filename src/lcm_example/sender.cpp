@@ -1,5 +1,8 @@
+#include <iostream>
 #include <lcm/lcm-cpp.hpp>
 #include "example/example_t.hpp"
+
+using namespace std;
 
 int main(int argc, char* argv[])
 {
@@ -31,6 +34,7 @@ int main(int argc, char* argv[])
   example_msg.enabled = true;
 
   // Publish message
+  cout << "Sending message..." << endl;
   lcm.publish("EXAMPLE_MESSAGES", &example_msg);
 
   return 0;

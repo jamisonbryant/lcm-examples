@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include <iostream>
 #include <lcm/lcm-cpp.hpp>
 #include "example/example_t.hpp"
+
+using namespace std;
 
 class Handler
 {
@@ -41,6 +43,7 @@ int main(int argc, char* argv[])
   // Start listener
   Handler handler;
   lcm.subscribe("EXAMPLE_MESSAGES", &Handler::handle_msg, &handler);
+  cout << "Listening for messages..." << endl << endl;
 
   while (0 == lcm.handle())
 
