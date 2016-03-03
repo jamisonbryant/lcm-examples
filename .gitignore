@@ -1,0 +1,13 @@
+# CLion project files
+.idea/
+
+# CMake output files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+bin/
+
+# Emacs backup files
+*~
+\#*\#
+.\#*
